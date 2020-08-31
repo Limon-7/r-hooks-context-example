@@ -1,0 +1,15 @@
+.nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    background-color: indigo;
+    text-transform: uppercase;
+}
+.nav a {
+    text-decoration: none;
+    color: rgb(238, 53, 53);
+}
+.nav a.nav-active {
+    color: lawngreen;
+}

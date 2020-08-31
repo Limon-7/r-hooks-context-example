@@ -1,0 +1,17 @@
+.sidebar {
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    text-transform: uppercase;
+    border-top: 1px solid black;
+    background-image: linear-gradient(to right, indigo, rgb(159, 97, 204));
+}
+.sidebar a {
+    text-decoration: none;
+    color: rgb(238, 53, 53);
+}
+.sidebar a.nav-active {
+    text-decoration: overline;
+    color: lawngreen;
+}

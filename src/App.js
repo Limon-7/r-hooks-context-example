@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import "./App.css";
+
+import UseStateCounter from "./components/hooks-component/UseStateCounter";
+import UseEffectContainer from "./components/hooks-component/UseEffectContainer";
+import ClassCounter from "./components/class-components/ClassCounter";
+import Navigation from "./components/navigation/Navigation";
+import * as ROUTES from "./components/constant/routes";
+import UseEffectClassContainer from "./components/class-components/UseEffectClassContainer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const Home = () => {
+        return <h1>Home Component goes here</h1>;
+    };
+    return (
+        <BrowserRouter>
+            <div className="app">
+                <Navigation />
+                <Switch>
+                    <Route exact path={ROUTES.HOME} component={Home} />
+                    <Route
+                        path={ROUTES.USE_STATE}
+                        component={UseStateCounter}
+                    />
+                    <Route
+                        path={ROUTES.USE_STATE_CLASS}
+                        component={ClassCounter}
+                    />
+                    <Route
+                        path={ROUTES.USE_EFFECT_HOME}
+                        component={UseEffectContainer}
+                    />
+                    <Route
+                        path={ROUTES.USE_EFFECT_CLASS_HOME}
+                        component={UseEffectClassContainer}
+                    />
+                </Switch>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
