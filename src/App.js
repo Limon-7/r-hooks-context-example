@@ -11,35 +11,31 @@ import * as ROUTES from "./components/constant/routes";
 import UseEffectClassContainer from "./components/class-components/UseEffectClassContainer";
 
 function App() {
-    const Home = () => {
-        return <h1>Home Component goes here</h1>;
-    };
+  const Home = () => {
     return (
-        <BrowserRouter>
-            <div className="app">
-                <Navigation />
-                <Switch>
-                    <Route exact path={ROUTES.HOME} component={Home} />
-                    <Route
-                        path={ROUTES.USE_STATE}
-                        component={UseStateCounter}
-                    />
-                    <Route
-                        path={ROUTES.USE_STATE_CLASS}
-                        component={ClassCounter}
-                    />
-                    <Route
-                        path={ROUTES.USE_EFFECT_HOME}
-                        component={UseEffectContainer}
-                    />
-                    <Route
-                        path={ROUTES.USE_EFFECT_CLASS_HOME}
-                        component={UseEffectClassContainer}
-                    />
-                </Switch>
-            </div>
-        </BrowserRouter>
+      <div className="home">
+        <h1>Welcome to page</h1>
+        <p>This is for rect hook course</p>
+      </div>
     );
+  };
+  return (
+    <BrowserRouter>
+      <div className="app">
+        <Navigation />
+        <Switch>
+          <Route exact path={ROUTES.HOME} component={Home} />
+          <Route path={ROUTES.USE_STATE} component={UseStateCounter} />
+          <Route path={ROUTES.USE_STATE_CLASS} component={ClassCounter} />
+          <Route path={ROUTES.USE_EFFECT_HOME} component={UseEffectContainer} />
+          <Route
+            path={ROUTES.USE_EFFECT_CLASS_HOME}
+            component={UseEffectClassContainer}
+          />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
