@@ -15,7 +15,6 @@ function App() {
     return (
       <div className="home">
         <h1>Welcome to page</h1>
-        <p>This is for rect hook course</p>
       </div>
     );
   };
